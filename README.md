@@ -18,8 +18,8 @@ AnimeHunt is an anime search application currently under development. This appli
 
 ## Screenshot
 
-<img src="https://i.ibb.co/br5NhjQ/Screenshot-2024-02-07-200611.png">
-<img src="https://i.ibb.co/D5bR24w/Screenshot-2024-02-07-200625.png">
+<img src="https://i.ibb.co/zSVPcWQ/Screenshot-2024-02-07-200611.png">
+<img src="https://i.ibb.co/t8hJrBY/Screenshot-2024-02-07-200625.png">
 
 ## Getting Started
 
