@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="fav/favicon-16x16.png">
+    <title>Anime Finder</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="nav-logo">
+                <h1>Anime</h1>
+            </div>
+            <div class="nav-link">
+                <ul class="nav-link">
+                    <li class="link"><a href="#">Home</a></li>
+                    <li class="link"><a href="/search">Search</a></li>
+                    <li class="link"><a href="#">Social</a></li>
+                    <li class="link login"><a href="#">Login</a></li>
+                    <li class="link register"><a href="#">Sign up</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="row">
+            <div class="landing-section trending">
+                <a href="#" class="title-link">
+                    <h3>Trending Now</h3>
+                    <div class="expand">View all</div>
+                </a>
+                
+                <div class="result">
+                    <% for (var i="0"; i < idT.length; i++) {%>
+                    <div class="media-card">
+                        <a href="#" class="cover">
+                            <img src='<%= imgT[i] %>' alt="">
+                        </a>
+                        <a href="#" class="title"><%= titleT[i] %></a>
+                    </div>
+                    <% } %>
+                </div>
+                
+            </div>
+
+            <div class="landing-section popular">
+                <a href="#" class="title-link">
+                    <h3>Popular This Season</h3>
+                    <div class="expand">View all</div>
+                </a>
+
+                <div class="result">
+                    <% for (var i="0"; i < idA.length; i++) {%>
+                    <div class="media-card">
+                        <a href="#" class="cover">
+                            <img src='<%= imgA[i] %>' alt="">
+                        </a>
+                        <a href="#" class="title"><%= titleA[i] %></a>
+                    </div>
+                    <% } %>
+                </div>
+            </div>
+
+            <div class="landing-section upcoming">
+                <a href="#" class="title-link">
+                    <h3>Upcoming Next Season</h3>
+                    <div class="expand">View all</div>
+                </a>
+                <div class="result">
+                    <% for (var i="0"; i < idU.length; i++) {%>
+                    <div class="media-card">
+                        <a href="#" class="cover">
+                            <img src='<%= imgU[i] %>' alt="">
+                        </a>
+                        <a href="#" class="title"><%= titleU[i] %></a>
+                    </div>
+                    <% } %>
+                </div>
+                
+            </div>
+
+            <div class="landing-section all-time">
+                <a href="#" class="title-link">
+                    <h3>All Time Popular</h3>
+                    <div class="expand">View all</div>
+                </a>
+
+                <div class="result">
+                    <div class="media-card">
+                        <a href="#" class="cover">
+                            <img src="https://cdn.myanimelist.net/images/anime/1015/138006.jpg" alt="">
+                        </a>
+                        <a href="#" class="title">Sousou no Frieren</a>
+                    </div>
+                    <div class="media-card">
+                        <a href="#" class="cover">
+                            <img src="https://cdn.myanimelist.net/images/anime/1015/138006.jpg" alt="">
+                        </a>
+                        <a href="#" class="title">Sousou no Frieren</a>
+                    </div>
+                    <div class="media-card">
+                        <a href="#" class="cover">
+                            <img src="https://cdn.myanimelist.net/images/anime/1015/138006.jpg" alt="">
+                        </a>
+                        <a href="#" class="title">Sousou no Frieren</a>
+                    </div>
+                    <div class="media-card">
+                        <a href="#" class="cover">
+                            <img src="https://cdn.myanimelist.net/images/anime/1015/138006.jpg" alt="">
+                        </a>
+                        <a href="#" class="title">Sousou no Frieren</a>
+                    </div>
+                    <div class="media-card">
+                        <a href="#" class="cover">
+                            <img src="https://cdn.myanimelist.net/images/anime/1015/138006.jpg" alt="">
+                        </a>
+                        <a href="#" class="title">Sousou no Frieren</a>
+                    </div>
+                    <div class="media-card">
+                        <a href="#" class="cover">
+                            <img src="https://cdn.myanimelist.net/images/anime/1015/138006.jpg" alt="">
+                        </a>
+                        <a href="#" class="title">Sousou no Frieren</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="landing-section top">
+                <a href="#" class="title-link">
+                    <h3>Top 100 Anime</h3>
+                    <div class="expand">View all</div>
+                </a>
+
+                <div top-100 class="result table">
+                    <div top-100 class="media-card has-rank">
+                        <div class="rank circle">
+                            <span class="hash">#</span>
+                            1
+                        </div>
+                        <a top-100 href="#" class="cover">
+                            <img src="https://cdn.myanimelist.net/images/anime/1015/138006.jpg" alt="">
+                        </a>
+                        <div top-100 class="content">
+                            <div class="rows title">
+                                <div class="title-wrap">
+                                    <a href="">Sousou no Frieren</a>
+                                </div>
+                                <div class="genres">
+                                    <a href="" class="genre">action</a>
+                                    <a href="" class="genre">comedy</a>
+                                    <a href="" class="genre">drama</a>
+                                    <a href="" class="genre">sci-fi</a>
+                                </div>
+                            </div>
+                            <div class="rows score">
+                                <div class="percentage">
+                                    91%
+                                    <div class="sub-row popularity">312121 users</div>
+                                </div>
+                            </div>
+                            <div class="rows format">
+                                Tv Show
+                                <div class="sub-row length">1 hour, 44 mins</div>
+                            </div>
+                            <div class="rows date">
+                                Winter 2021
+                                <div class="sub-row status">Finished</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div top-100 class="media-card has-rank">
+                        <div class="rank circle">
+                            <span class="hash">#</span>
+                            1
+                        </div>
+                        <a top-100 href="#" class="cover">
+                            <img src="https://cdn.myanimelist.net/images/anime/1208/94745.jpg" alt="">
+                        </a>
+                        <div top-100 class="content">
+                            <div class="rows title">
+                                <div class="title-wrap">
+                                    <a href="">AFullmetal Alchemist: Brotherhood</a>
+                                </div>
+                                <div class="genres">
+                                    <a href="" class="genre">action</a>
+                                    <a href="" class="genre">comedy</a>
+                                    <a href="" class="genre">drama</a>
+                                    <a href="" class="genre">sci-fi</a>
+                                </div>
+                            </div>
+                            <div class="rows score">
+                                <div class="percentage">
+                                    91%
+                                    <div class="sub-row popularity">312121 users</div>
+                                </div>
+                            </div>
+                            <div class="rows format">
+                                Tv Show
+                                <div class="sub-row length">1 hour, 44 mins</div>
+                            </div>
+                            <div class="rows date">
+                                Winter 2021
+                                <div class="sub-row status">Finished</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div top-100 class="media-card has-rank">
+                        <div class="rank circle">
+                            <span class="hash">#</span>
+                            2
+                        </div>
+                        <a top-100 href="#" class="cover">
+                            <img src="https://cdn.myanimelist.net/images/anime/3/72078.jpg" alt="">
+                        </a>
+                        <div top-100 class="content">
+                            <div class="rows title">
+                                <div class="title-wrap">
+                                    <a href="">Gintama°</a>
+                                </div>
+                                <div class="genres">
+                                    <a href="" class="genre">action</a>
+                                    <a href="" class="genre">comedy</a>
+                                    <a href="" class="genre">drama</a>
+                                    <a href="" class="genre">sci-fi</a>
+                                </div>
+                            </div>
+                            <div class="rows score">
+                                <div class="percentage">
+                                    91%
+                                    <div class="sub-row popularity">312121 users</div>
+                                </div>
+                            </div>
+                            <div class="rows format">
+                                Tv Show
+                                <div class="sub-row length">1 hour, 44 mins</div>
+                            </div>
+                            <div class="rows date">
+                                Winter 2021
+                                <div class="sub-row status">Finished</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div top-100 class="media-card has-rank">
+                        <div class="rank circle">
+                            <span class="hash">#</span>
+                            3
+                        </div>
+                        <a top-100 href="#" class="cover">
+                            <img src="https://cdn.myanimelist.net/images/anime/1517/100633.jpg" alt="">
+                        </a>
+                        <div top-100 class="content">
+                            <div class="rows title">
+                                <div class="title-wrap">
+                                    <a href="">Shingeki no Kyojin Season 3 Part 2</a>
+                                </div>
+                                <div class="genres">
+                                    <a href="" class="genre">action</a>
+                                    <a href="" class="genre">comedy</a>
+                                    <a href="" class="genre">drama</a>
+                                    <a href="" class="genre">sci-fi</a>
+                                </div>
+                            </div>
+                            <div class="rows score">
+                                <div class="percentage">
+                                    91%
+                                    <div class="sub-row popularity">312121 users</div>
+                                </div>
+                            </div>
+                            <div class="rows format">
+                                Tv Show
+                                <div class="sub-row length">1 hour, 44 mins</div>
+                            </div>
+                            <div class="rows date">
+                                Winter 2021
+                                <div class="sub-row status">Finished</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div top-100 class="media-card has-rank">
+                        <div class="rank circle">
+                            <span class="hash">#</span>
+                            4
+                        </div>
+                        <a top-100 href="#" class="cover">
+                            <img src="https://cdn.myanimelist.net/images/anime/1908/135431.jpg" alt="">
+                        </a>
+                        <div top-100 class="content">
+                            <div class="rows title">
+                                <div class="title-wrap">
+                                    <a href="">Anime nya mana njaing</a>
+                                </div>
+                                <div class="genres">
+                                    <a href="" class="genre">action</a>
+                                    <a href="" class="genre">comedy</a>
+                                    <a href="" class="genre">drama</a>
+                                    <a href="" class="genre">sci-fi</a>
+                                </div>
+                            </div>
+                            <div class="rows score">
+                                <div class="percentage">
+                                    91%
+                                    <div class="sub-row popularity">312121 users</div>
+                                </div>
+                            </div>
+                            <div class="rows format">
+                                Tv Show
+                                <div class="sub-row length">1 hour, 44 mins</div>
+                            </div>
+                            <div class="rows date">
+                                Winter 2021
+                                <div class="sub-row status">Finished</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <p>Created with love</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {box-sizing: border-box;}
+p {margin: 0; padding: 0;}
+h1 {margin: 0; padding: 0;}
+body {margin: 0;}
+a {text-decoration: none; color: #bcbedc;}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2b2d42;
+    height: 80px;
+}
+
+.row {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 20rem;
+    margin-right: 20rem;
+    min-height: 100px;
+}
+
+.nav-logo {
+    color: #fff;
+    width: 100px;
+}
+
+ul.nav-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    list-style: none;
+    width: 1000px;
+}
+
+ul.nav-link {
+    justify-content: center;
+    align-items: center;
+}
+
+li.login {
+    margin-left: 5rem;
+}
+
+li.register {
+    background-color: #3577ff;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 0.5em;
+}
+
+li.register a {
+    color: #fff;
+}
+
+li.register:hover {
+    box-shadow: 1px 1px 10px #3577ff;
+}
+
+li.link:hover {
+    text-shadow: 1px 1px 10px #fff;
+}
+
+.landing-section {
+    margin-bottom: 50px;
+}
+
+.title-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: small;
+}
+
+.result {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 175px);
+    grid-gap: 33px;
+}
+
+.media-card {
+    display: grid;
+    grid-template-rows: min-content auto;
+    position: relative;
+    width: 200px;
+}
+
+.cover {
+    border-radius: 4px;
+    height: 265px;
+    overflow: hidden;
+    width: 100%;
+    z-index: 5;
+    
+}
+
+.cover img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+    transition: opacity .3 ease-in-out;
+}
+
+.title {
+    color: rgb(116,136,153);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 21px;
+    margin-top: 10px;
+    overflow: hidden;
+    transition: color .2s ease;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.result.table {
+    grid-template-columns: 1fr;
+    grid-gap: 24px;
+}
+
+.result[top-100] {
+    display: grid;
+    justify-content: space-between;
+}
+
+.media-card.has-rank {
+    margin-left: 80px;
+}
+
+.rank {
+    color: rgb(81,97,112);
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: 600;
+    height: 50px;
+    left: -70px;
+    line-height: 0;
+    padding: 10px;
+    position: absolute;
+    text-align: left;
+    top: 18px;
+    width: 50px;
+    z-index: 2;
+}
+
+.circle {
+    align-items: center;
+    border-radius: 50%;
+}
+
+.rank .hash {
+    font-size: 0.8rem;
+    padding-top: 4px;
+}
+
+.media-card[top-100] {
+    backface-visibility: hidden;
+    background-color: rgb(251,251,251);
+    border-radius: 4px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 48px auto;
+    position: relative;
+    text-align: left;
+    min-height: 80px;
+    width: 94%;
+    box-shadow: 0 14px 30px rgba(103,132,187,.15),0 4px 4px rgba(103,132,187,.05);
+}
+
+.cover[top-100] {
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+    height: 50px;
+}
+
+.cover[top-100] img {
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.content[top-100] {
+    display: grid;
+    grid-template-columns: 600px 150px 150px 150px;
+    padding-left: 10px;
+    align-items: center;
+    grid-gap: 10px;
+}
+
+.title-wrap {
+    margin-bottom: 8px;
+}
+
+.title-wrap a {
+    color: rgb(81,97,112);
+}
+
+.genres {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.genre {
+    background-color: #ef5d5d;
+    color: #fff;
+    display: inline-block;
+    font-size: 15px;    
+    border-radius: 20px;
+    margin-right: 8px;
+    margin-bottom: 1px;
+    padding: 0 10px;
+    text-transform: lowercase;
+}
+
+.rows {
+    color: rgb(118, 126, 134);
+    font-weight: 600;
+}
+
+.sub-row {
+    color: rgb(170, 194, 214);
+    margin-top: 8px;
+    font-size: 15px;
+}
+
+.footer {
+    color: #fff;
+    background-color: #11161d;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
