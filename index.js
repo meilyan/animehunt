@@ -9,12 +9,23 @@ app.use(express.static("public"));
 app.use(express.urlencoded({extended: true}));
 
 app.get ("/", async (req, res) => {
-    const animeTopResult = await axios.get(API_URL + "/top/anime?type=tv&limit=6&filter=bypopularity");
+    const animeTopResult = await axios.get(API_URL + "/top/anime?type=tv&filter=bypopularity");
     const animeTopAiringResult = await axios.get(API_URL + "/top/anime?type=tv&limit=6&filter=airing");
     const animeTopUpCommingResult = await axios.get(API_URL + "/top/anime?type=tv&limit=6&filter=upcoming");
-    const topMalId = [];
-    const topImages = [];
-    const topTitle = [];
+    
+    const topAnimeData = {
+        topMalId : [],
+        topImages : [],
+        topTitle : [],
+        topType : [],
+        topStatus : [],
+        topSeason : [],
+        topYear : [],
+        topScore : [],
+        topMembers: [],
+        topDuration: [],
+        topGenre : [],
+    }
 
     const topAiringMalId = [];
     const topAiringImages = [];
@@ -25,9 +36,19 @@ app.get ("/", async (req, res) => {
     const topUpCommingTitle = [];
 
     animeTopResult.data.data.forEach(anime => {
-        topMalId.push(anime.mal_id)
-        topImages.push(anime.images.jpg.image_url)
-        topTitle.push(anime.title)
+        topAnimeData.topMalId.push(anime.mal_id)
+        topAnimeData.topImages.push(anime.images.jpg.image_url)
+        topAnimeData.topTitle.push(anime.title)
+        topAnimeData.topType.push(anime.type)
+        topAnimeData.topStatus.push(anime.status)
+        topAnimeData.topSeason.push(anime.season)
+        topAnimeData.topYear.push(anime.year)
+        topAnimeData.topScore.push(anime.score)
+        topAnimeData.topMembers.push(anime.members)
+        topAnimeData.topDuration.push(anime.duration)
+        
+        const genreNames = anime.genres.map(genre => genre.name);
+        topAnimeData.topGenre.push(genreNames)
     });
 
     animeTopAiringResult.data.data.forEach(anime => {
@@ -43,9 +64,7 @@ app.get ("/", async (req, res) => {
     });
 
     res.render("index.ejs", {
-        idT: topMalId,
-        imgT: topImages,
-        titleT: topTitle,
+        topAnimeData,
         
         idA: topAiringMalId,
         imgA: topAiringImages,
