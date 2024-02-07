@@ -16,6 +16,11 @@ AnimeHunt is an anime search application currently under development. This appli
 - [ ] Searching for anime by genre, release year, and more
 - [ ] Allowing users to mark anime as favorites
 
+## Screenshot
+
+![alt text]([http://url/to/img.png](https://i.ibb.co/br5NhjQ/Screenshot-2024-02-07-200611.png)
+![alt text]([http://url/to/img.png](https://i.ibb.co/D5bR24w/Screenshot-2024-02-07-200625.png)
+
 ## Getting Started
 
 1. Make sure you have Node.js installed on your computer.
