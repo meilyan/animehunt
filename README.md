@@ -8,6 +8,14 @@ AnimeHunt is an anime search application currently under development. This appli
 - **EJS**: Template engine for creating the front-end interface.
 - **Jikan API**: An API for fetching anime data.
 
+## Key Features
+
+- [x] Displaying popular anime listings
+- [x] Searching for anime by title
+- [ ] Displaying detailed anime information
+- [ ] Searching for anime by genre, release year, and more
+- [ ] Allowing users to mark anime as favorites
+
 ## Getting Started
 
 1. Make sure you have Node.js installed on your computer.
