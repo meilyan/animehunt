@@ -80,24 +80,30 @@ app.get ("/search", async (req, res) => {
     res.render("search.ejs")
 })
 
-app.post ("/anime-search", async (req, res) => {
+app.post ("/search-anime", async (req, res) => {
     const animeInput = req.body.anime;
-    const animeId = [];
-    const animeTitle = [];
-    const animeImg = [];
-    const animeSinop = [];
-    
-    const animeResult = await axios.get(API_URL + "/anime?q='" + animeInput +"'");
+    const animeData = {
+        animeId : [],
+        animeTitle : [],
+        animeImg : [],
+    }
+
+    const animeResult = await axios.get(API_URL + "/anime?q='" + animeInput + "'");
     animeResult.data.data.forEach(anime => {
-        animeId.push(anime.mal_id);
-        animeTitle.push(anime.title);
-        animeImg.push(anime.images.jpg.image_url)
-    });
+        animeData.animeId.push(anime.mal_id);
+        animeData.animeTitle.push(anime.title);
+        animeData.animeImg.push(anime.images.jpg.image_url);
+    })
+
     res.render("search-anime.ejs", {
-        animeId: animeId,
-        animeTitle: animeTitle,
-        animeImg: animeImg
+        animeData,
     });
+})
+
+app.get("/anime/:id/:title", async (req,res) => {
+    const animeResult = await axios.get(API_URL + "/anime/" + req.params.id + "/full")
+    
+    res.render("anime.ejs", {animeData : animeResult.data.data})
 })
 
 app.listen(port, ()=>{
