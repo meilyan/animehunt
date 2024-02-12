@@ -1,21 +1,20 @@
-# Use a specific version of Node.js to ensure consistency
+# Use an official Node.js runtime as a base image
 FROM node:20.11.0
 
 # Set the working directory inside the container
-WORKDIR /app
+WORKDIR /usr/src/app
 
-# Copy package.json and package-lock.json separately to leverage Docker layer caching
-COPY package.json .
-COPY package-lock.json .
+# Copy package.json and package-lock.json to the working directory
+COPY package*.json ./
 
-# Install dependencies
+# Install the project dependencies
 RUN npm install
 
-# Expose port 3000 for the application
-EXPOSE 3000
-
-# Copy the rest of the application code
+# Copy the rest of the application code to the working directory
 COPY . .
 
-# Specify the command to run your application
-CMD ["node", "app.js"]
+# Expose the port your app runs on
+EXPOSE 3000
+
+# Command to run your application, ensure that index.js is the correct entry point
+CMD ["node", "index.js"]
