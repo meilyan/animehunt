@@ -1,7 +1,7 @@
 import express from "express";
 import axios from "axios";
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 const app = express();
 const API_URL = "https://api.jikan.moe/v4"
 
@@ -96,13 +96,12 @@ app.post ("/search-anime", async (req, res) => {
     })
 
     res.render("search-anime.ejs", {
-        animeData,
+        animeData, animeInput
     });
 })
 
 app.get("/anime/:id/:title", async (req,res) => {
     const animeResult = await axios.get(API_URL + "/anime/" + req.params.id + "/full")
-    
     res.render("anime.ejs", {animeData : animeResult.data.data})
 })
 

@@ -1,3 +1,9 @@
 <%- include("part/header.ejs") %>
-<img src="<%= animeData.images.jpg.image_url %>" alt="">
+<div class="row">
+    <img src="<%= animeData.images.jpg.image_url %>" alt="">
+</div>
+
+<script>
+    document.title = "<%= animeData.title %> | Anime Finder"
+</script>
 <%- include("Part/footer.ejs") %>
