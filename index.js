@@ -102,7 +102,8 @@ app.post ("/search-anime", async (req, res) => {
 
 app.get("/anime/:id/:title", async (req,res) => {
     const animeResult = await axios.get(API_URL + "/anime/" + req.params.id + "/full")
-    res.render("anime.ejs", {animeData : animeResult.data.data})
+    const imageResult = await axios.get(API_URL + "/anime/" + req.params.id + "/pictures")
+    res.render("anime.ejs", {animeData : animeResult.data.data, imageData : imageResult.data.data[Math.floor(Math.random()*imageResult.data.data.length)] })
 })
 
 app.listen(port, ()=>{

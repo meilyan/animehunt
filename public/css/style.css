@@ -21,10 +21,24 @@ nav {
     align-items: center;
     background-color: #2b2d42;
     height: 80px;
+    z-index: 999;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+}
+
+.hide {
+    display: none;
+}
+
+.transparant-nav {
+    background: rgba(35,38,67,80%);
+    color: #e5e7ea;
 }
 
 .row {
-    margin-top: 2rem;
+    margin-top: 5rem;
     margin-bottom: 2rem;
     margin-left: 20rem;
     margin-right: 20rem;
@@ -328,7 +342,6 @@ li.link:hover {
 }
 
 
-
 .footer {
     color: #fff;
     background-color: #11161d;
@@ -336,4 +349,121 @@ li.link:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.header-wrap {
+    position: relative;
+}
+
+.banner {
+    background-position: 50% 40%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    margin-top: -58px;
+}
+
+.shadow {
+    background: linear-gradient(180deg,rgba(6,13,34,0) 10%,rgba(6,13,34,.6));
+    height: 400px;
+}
+
+.header {
+    background: rgb(250,250,250);
+}
+
+.header-data {
+    min-height: 250px;
+    display: grid;
+    grid-template-columns: 215px auto;
+    margin: 0 20rem 0 20rem;
+    min-width: 320px;
+    grid-column-gap: 20px;
+}
+
+.cover-wrap {
+    margin-top: -125px
+}
+
+.cover-wrap-inner {
+    position: static;
+}
+
+.cover-wrap-inner img {
+    background-color: rgba(212,230,245,.5);
+    border-radius: 10px;
+    box-shadow: 0 0 29px rgba(49,54,68,.25);
+    margin-top: 15px;
+    width: 100%;
+    vertical-align: text-top;
+}
+
+.action {
+    display: grid;
+    grid-template-columns: auto 35px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    grid-gap: 15px;
+}
+
+.action .list {
+    align-items: center;
+    background: rgb(61,180,242);
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    height: 35px;
+    justify-content: center;
+    line-height: 1rem;
+}
+
+.action .favourit {
+    align-items: center;
+    background: rgb(236,41,75);
+    border-radius: 5px;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    height: 35px;
+    justify-content: center;
+    padding: 0 10px;
+}
+
+.content-anime {
+    display: inline-grid;
+    grid-template-rows: min-content min-content auto;
+    padding-top: 25px;
+}
+
+.content h1 {
+    color: rgb(92,114,138);
+}
+
+.description {
+    color: rgb(92,114,138);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+    padding: 15px 0;
+}
+
+.nav-content {
+    align-self: end;
+    display: flex;
+    justify-content: space-evenly;
+    justify-self: center;
+    padding-top: 10px;
+    width: 100%;
+}
+
+.nav-content a {
+    font-size: 0.9rem;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
 }

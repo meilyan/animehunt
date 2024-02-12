@@ -1,9 +1,52 @@
 <%- include("part/header.ejs") %>
+
+<div class="header-wrap">
+    <div class="banner" style="background-image: url(' <%= imageData.webp.large_image_url %>');">
+        <div class="shadow"></div>
+    </div>
+    <div class="header">
+        <div class="header-data">
+            <div class="cover-wrap">
+                <div class="cover-wrap-inner">
+                    <img src="<%= animeData.images.jpg.image_url %>" alt="">
+                    <div class="action">
+                        <div class="list">
+                            <div class="add">Add to list</div>
+                        </div>
+                        <div class="favourit">
+                            <svg data-v-0228dea0="" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-heart fa-w-16"><path data-v-0228dea0="" fill="currentColor" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" class=""></path></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-anime">
+                <h1><%= animeData.title %></h1>
+                <p class="description"><%= animeData.synopsis%></p>
+                <div class="nav-content">
+                    <a href="#" class="tablinks" onclick="openDetail(event, 'Overview')">Overview</button>
+                    <a href="#" class="tablinks" onclick="openDetail(event, 'Watch')">Watch</button>
+                    <a href="#" class="tablinks" onclick="openDetail(event, 'Characters')">Characters</button>
+                    <a href="#" class="tablinks" onclick="openDetail(event, 'Staff')">Staff</button>
+                    <a href="#" class="tablinks" onclick="openDetail(event, 'Stats')">Stats</button>
+                    <a href="#" class="tablinks" onclick="openDetail(event, 'Social')">Social</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="row">
-    <img src="<%= animeData.images.jpg.image_url %>" alt="">
+<div id="Overview" class="tabcontent">a</div>
+<div id="Watch" class="tabcontent">b</div>
+<div id="Characters" class="tabcontent">c</div>
+<div id="Staff" class="tabcontent">d</div>
+<div id="Stats" class="tabcontent">e</div>
+<div id="Social" class="tabcontent">f</div>
 </div>
 
 <script>
     document.title = "<%= animeData.title %> | Anime Finder"
+    document.querySelector(".navnav").classList.add("transparant-nav")
+
 </script>
 <%- include("Part/footer.ejs") %>
