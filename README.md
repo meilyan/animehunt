@@ -12,7 +12,7 @@ AnimeHunt is an anime search application currently under development. This appli
 
 - [x] Displaying popular anime listings
 - [x] Searching for anime by title
-- [ ] Displaying detailed anime information
+- [x] Displaying detailed anime information
 - [ ] Searching for anime by genre, release year, and more
 - [ ] Allowing users to mark anime as favorites
 
