@@ -15,12 +15,12 @@ function openDetail(evt, cityName) {
     evt.currentTarget.className += " active";
     }
 
-    window.onscroll = function() {
-        var currentScrollPos = window.pageYOffset;
+window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
 
-        if (currentScrollPos > 100) {
-            document.querySelector(".navnav").classList.add("hide")
-        } else {
-            document.querySelector(".navnav").classList.remove("hide")
-        }
+    if (currentScrollPos > 100) {
+        document.querySelector(".navnav").classList.add("hide")
+    } else {
+        document.querySelector(".navnav").classList.remove("hide")
     }
+}

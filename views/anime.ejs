@@ -23,12 +23,12 @@
                 <h1><%= animeData.title %></h1>
                 <p class="description"><%= animeData.synopsis%></p>
                 <div class="nav-content">
-                    <a href="#" class="tablinks" onclick="openDetail(event, 'Overview')">Overview</button>
-                    <a href="#" class="tablinks" onclick="openDetail(event, 'Watch')">Watch</button>
-                    <a href="#" class="tablinks" onclick="openDetail(event, 'Characters')">Characters</button>
-                    <a href="#" class="tablinks" onclick="openDetail(event, 'Staff')">Staff</button>
-                    <a href="#" class="tablinks" onclick="openDetail(event, 'Stats')">Stats</button>
-                    <a href="#" class="tablinks" onclick="openDetail(event, 'Social')">Social</button>
+                    <a href="#" class="tablinks active" onclick="openDetail(event, 'Overview')">Overview</a>
+                    <a href="#" class="tablinks" onclick="openDetail(event, 'Watch')">Watch</a>
+                    <a href="#" class="tablinks" onclick="openDetail(event, 'Characters')">Characters</a>
+                    <a href="#" class="tablinks" onclick="openDetail(event, 'Staff')">Staff</a>
+                    <a href="#" class="tablinks" onclick="openDetail(event, 'Stats')">Stats</a>
+                    <a href="#" class="tablinks" onclick="openDetail(event, 'Social')">Social</a>
                 </div>
             </div>
         </div>
@@ -36,17 +36,80 @@
 </div>
 
 <div class="row">
-<div id="Overview" class="tabcontent">a</div>
-<div id="Watch" class="tabcontent">b</div>
-<div id="Characters" class="tabcontent">c</div>
-<div id="Staff" class="tabcontent">d</div>
-<div id="Stats" class="tabcontent">e</div>
-<div id="Social" class="tabcontent">f</div>
-</div>
+
+    <div class="main-content">
+        <div class="sidebar">
+            <div class="alternate ranking">
+                #<%= animeData.rank %> Highest Rated All Time
+            </div>
+
+            <div class="alternate popularity">
+                #<%= animeData.popularity %>Most Popular All Time
+            </div>
+
+            <div class="alternate titles">
+                <% for (var i = 0; i < animeData.titles.map(name=> name.title).length; i++) {%>
+                    <li><%= animeData.titles.map(name=> name.title)[i] %></li>
+                <% } %>
+            </div>
+
+            <div class="alternate information">
+                <li>Type: <%= animeData.type %></li>
+                <li>Episodes: <%= animeData.episodes %></li>
+                <li>Status: <%= animeData.status %></li>
+                <li>Aired: <%= animeData.aired.string %></li>
+                <li>
+                    Producers: 
+                    <% for (var j = 0; j < animeData.producers.map(prod => prod.name).length; j++) {%>
+                        <a href="<%= animeData.producers.map(prod => prod.mal_id)[j]%>"><%= animeData.producers.map(prod => prod.name)[j]%></a>
+                    <% } %>
+                </li>
+                <li>Premiered: <%= animeData.season %> <%= animeData.year %></li>
+                <li>Studios: 
+                    <% for (st = 0; st < animeData.studios.map(studio => studio.name).length; st++) {%>
+                        <a href=""><%= animeData.studios.map(studio => studio.name)[st] %></a>
+                    <% } %>
+                    
+                </li>
+                <li>Genre: 
+                    <% for (k = 0; k < animeData.genres.map(genre => genre.name).length; k++) {%>
+                        <a href=""><%= animeData.genres.map(genre => genre.name)[k] %></a>
+                    <% } %>
+                </li>
+                <li>a</li>
+                <li>a</li>
+            </div>
+        </div>
+    
+        <div id="Overview" class="tabcontent" style="display: block;">
+            <div class="relation">
+                <h2>Characters</h2>
+                <div class="grid-wrap">
+                    <% for (var char = "0"; char < 6; char++) {%>
+                    <div class="media-relation-card"">
+                        <div class="media-character">
+                            <img src="<%= character.images[char] %>" alt="">
+                            <h3><%= character.name[char]%></h3>
+                        </div>
+                        <div class="voice-actor">
+                            <h3><%= voiceActor.name[char]%></h3>
+                            <img src="<%= voiceActor.images[char] %>" alt="">
+                        </div>
+                    </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+        <div id="Watch" class="tabcontent">b</div>
+        <div id="Characters" class="tabcontent">c</div>
+        <div id="Staff" class="tabcontent">d</div>
+        <div id="Stats" class="tabcontent">e</div>
+        <div id="Social" class="tabcontent">f</div>
+    </div>
+    </div>
 
 <script>
     document.title = "<%= animeData.title %> | Anime Finder"
     document.querySelector(".navnav").classList.add("transparant-nav")
-
 </script>
-<%- include("part/footer.ejs") %>
+<%- include("Part/footer.ejs") %>

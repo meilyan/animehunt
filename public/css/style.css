@@ -38,7 +38,7 @@ nav {
 }
 
 .row {
-    margin-top: 5rem;
+    margin-top: 2rem;
     margin-bottom: 2rem;
     margin-left: 20rem;
     margin-right: 20rem;
@@ -452,18 +452,100 @@ li.link:hover {
 .nav-content {
     align-self: end;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 50px;
     justify-self: center;
     padding-top: 10px;
     width: 100%;
+    margin-bottom: 1rem;
+    font-weight: 300;
 }
 
 .nav-content a {
-    font-size: 0.9rem;
+    font-size: 0.9em;
+    color: black;
 }
 
 .tabcontent {
     display: none;
-    padding: 6px 12px;
     border-top: none;
+}
+
+.main-content {
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: 250px auto;
+    font-size: 0.8rem;
+}
+
+.alternate {
+    background-color: white;
+    padding: 20px;
+    list-style-type: none;
+    line-height: 2rem;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    /*box-shadow: 0 14px 30px rgba(103,132,187,.15),0 4px 4px rgba(103,132,187,.05);*/
+}
+
+.alternate li a {
+    display: block;
+}
+
+.ranking {
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+.popularity {
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+.grid-wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.media-relation-card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    grid-gap: 30px;
+    margin-right: 10px;
+}
+
+.media-relation-card h3 {
+    font-weight: 300;
+    font-size: 0.8rem;
+}
+
+.media-character {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.media-character img {
+    height: 100px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-right: 20px;
+}
+
+.voice-actor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.voice-actor img {
+    height: 100px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }

@@ -103,7 +103,40 @@ app.post ("/search-anime", async (req, res) => {
 app.get("/anime/:id/:title", async (req,res) => {
     const animeResult = await axios.get(API_URL + "/anime/" + req.params.id + "/full")
     const imageResult = await axios.get(API_URL + "/anime/" + req.params.id + "/pictures")
-    res.render("anime.ejs", {animeData : animeResult.data.data, imageData : imageResult.data.data[Math.floor(Math.random()*imageResult.data.data.length)] })
+    const characterResult = await axios.get(API_URL + "/anime/" + req.params.id + "/characters")
+    const characterData = {
+        charId: [],
+        images: [],
+        name: []
+    }
+    const voiceActorData = {
+        voiceId: [],
+        images: [],
+        name: []
+    }
+
+    characterResult.data.data.map(char => char.character).forEach(character => {
+        characterData.charId.push(character.mal_id);
+        characterData.images.push(character.images.jpg.image_url);
+        characterData.name.push(character.name)
+    })
+
+    characterResult.data.data.forEach(character => {
+        if (character.voice_actors.length > 0) {
+          const firstVoiceActorName = character.voice_actors[0].person.name;
+          const firstVoiceActorImage = character.voice_actors[0].person.images.jpg.image_url;
+          voiceActorData.name.push(firstVoiceActorName)
+          voiceActorData.images.push(firstVoiceActorImage)
+        }
+      });
+
+    console.log(voiceActorData.images)
+
+    res.render("anime.ejs", {
+        animeData : animeResult.data.data, 
+        imageData : imageResult.data.data[Math.floor(Math.random()*imageResult.data.data.length)], 
+        character: characterData,
+        voiceActor: voiceActorData })
 })
 
 app.listen(port, ()=>{
