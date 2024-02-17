@@ -98,11 +98,64 @@
                     </div>
                     <% } %>
                 </div>
+
+                <h2>Staff</h2>
+                <div class="grid-wrap">
+                    <% for (var st = "0"; st < 3; st++) {%>
+                    <div class="media-relation-card">
+                        <div class="media-character">
+                            <img src="<%= staff.images[st] %>" alt="">
+                            <h3><%= staff.name[st] %></h3>
+                        </div>
+                    </div>
+                    <% } %>
+                </div>
+
+                <h2>Trailer</h2>
+                <% if (locals.animeData.trailer.embed_url) {%>
+                    <iframe src="<%= animeData.trailer.embed_url %>" frameborder="0" class="anime-trailer"></iframe>
+                <% } else { %>
+                    <h3>no trailer availbale</h3>
+                    
+                <% } %>
+
+                <h2>Watch</h2>
+
+                <h2>Stats</h2>
+                <h2>Comment</h2>
             </div>
         </div>
         <div id="Watch" class="tabcontent">b</div>
-        <div id="Characters" class="tabcontent">c</div>
-        <div id="Staff" class="tabcontent">d</div>
+        <div id="Characters" class="tabcontent">
+            <h2>Characters</h2>
+            <div class="grid-wrap">
+                <% for (var char = "0"; char < character.charId.length; char++) {%>
+                <div class="media-relation-card"">
+                    <div class="media-character">
+                        <img src="<%= character.images[char] %>" alt="">
+                        <h3><%= character.name[char]%></h3>
+                    </div>
+                    <div class="voice-actor">
+                        <h3><%= voiceActor.name[char]%></h3>
+                        <img src="<%= voiceActor.images[char] %>" alt="">
+                    </div>
+                </div>
+                <% } %>
+            </div>
+        </div>
+        <div id="Staff" class="tabcontent">
+            <h2>Staff</h2>
+            <div class="grid-wrap">
+                <% for (var st = "0"; st < staff.staffId.length; st++) {%>
+                <div class="media-relation-card">
+                    <div class="media-character">
+                        <img src="<%= staff.images[st] %>" alt="">
+                        <h3><%= staff.name[st] %></h3>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+        </div>
         <div id="Stats" class="tabcontent">e</div>
         <div id="Social" class="tabcontent">f</div>
     </div>

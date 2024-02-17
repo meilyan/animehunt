@@ -1,9 +1,19 @@
 import express from "express";
 import axios from "axios";
+import Bottleneck from "bottleneck";
 
 const port = 3000;
 const app = express();
 const API_URL = "https://api.jikan.moe/v4"
+
+const apiClient = axios.create({
+    baseURL:API_URL
+})
+
+const limiter = new Bottleneck({
+    maxConcurrent: 1,
+    minTime: 2000,
+})
 
 app.use(express.static("public"));
 app.use(express.urlencoded({extended: true}));
@@ -101,16 +111,24 @@ app.post ("/search-anime", async (req, res) => {
 })
 
 app.get("/anime/:id/:title", async (req,res) => {
-    const animeResult = await axios.get(API_URL + "/anime/" + req.params.id + "/full")
-    const imageResult = await axios.get(API_URL + "/anime/" + req.params.id + "/pictures")
-    const characterResult = await axios.get(API_URL + "/anime/" + req.params.id + "/characters")
+    const animeResult = await limiter.schedule(() => apiClient.get(`/anime/${req.params.id}/full`)) 
+    const imageResult = await limiter.schedule(() => apiClient.get(`/anime/${req.params.id}/pictures`));
+    const characterResult = await limiter.schedule(() => apiClient.get(`/anime/${req.params.id}/characters`));
+    const staffResult = await limiter.schedule(() => apiClient.get(`/anime/${req.params.id}/staff`));
+
     const characterData = {
         charId: [],
         images: [],
-        name: []
+        name: [],
     }
     const voiceActorData = {
         voiceId: [],
+        images: [],
+        name: []
+    }
+
+    const staffData = {
+        staffId: [],
         images: [],
         name: []
     }
@@ -130,13 +148,19 @@ app.get("/anime/:id/:title", async (req,res) => {
         }
       });
 
-    console.log(voiceActorData.images)
+      staffResult.data.data.map(staff => staff.person).forEach(person => {
+        staffData.staffId.push(person.mal_id);
+        staffData.images.push(person.images.jpg.image_url);
+        staffData.name.push(person.name)
+      });
 
     res.render("anime.ejs", {
         animeData : animeResult.data.data, 
         imageData : imageResult.data.data[Math.floor(Math.random()*imageResult.data.data.length)], 
         character: characterData,
-        voiceActor: voiceActorData })
+        voiceActor: voiceActorData,
+        staff: staffData
+    })
 })
 
 app.listen(port, ()=>{

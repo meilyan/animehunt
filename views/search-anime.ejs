@@ -3,12 +3,14 @@
     <div class="landing-section trending">
     
         <div class="result">
+          <% var titleLinks = animeData.animeTitle.map(name => name.replace(/\s/g, '-')); %>
           <% for (var i="0"; i < animeData.animeId.length; i++) {%>
+            <% var animeUrl = "anime/" + animeData.animeId[i] + "/" + titleLinks[i]%>
           <div class="media-card">
-            <a href="#" class="cover">
+            <a href="<%= animeUrl %>" class="cover">
               <img src="<%= animeData.animeImg[i] %>" alt="" />
             </a>
-            <a href="#" class="title"><%= animeData.animeTitle[i] %></a>
+            <a href="<%= animeUrl %>" class="title"><%= animeData.animeTitle[i] %></a>
           </div>
           <% } %>
         </div>

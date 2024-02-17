@@ -8,8 +8,8 @@
 
     <div class="result">
       <% var titleLinks = topAnimeData.topTitle.map(name => name.replace(/\s/g, '-')); %>
-      <% for (var i="0"; i < 6; i++) {
-        var animeUrl = "anime/" + topAnimeData.topMalId[i] + "/" + titleLinks[i];%>
+      <% for (var i="0"; i < 6; i++) { %>
+        <% var animeUrl = "anime/" + topAnimeData.topMalId[i] + "/" + titleLinks[i]%>
       <div class="media-card">
         <a href="<%= animeUrl %>" class="cover">
           <img src="<%= topAnimeData.topImages[i] %>" alt="" />
@@ -67,18 +67,19 @@
 
     <div top-100 class="result table">
       <% for (var i = 0; i < 24; i++) {%>
+        <% var animeUrl = "anime/" + topAnimeData.topMalId[i] + "/" + titleLinks[i]%>
       <div top-100 class="media-card has-rank">
         <div class="rank circle">
           <span class="hash">#</span>
           <%- i+1 %>
         </div>
-        <a top-100 href="#" class="cover">
+        <a top-100 href="<%= animeUrl %>" class="cover">
           <img src="<%= topAnimeData.topImages[i] %>" alt="" />
         </a>
         <div top-100 class="content">
           <div class="rows title">
             <div class="title-wrap">
-              <a href=""><%= topAnimeData.topTitle[i] %></a>
+              <a href="<%= animeUrl %>"><%= topAnimeData.topTitle[i] %></a>
             </div>
             <div class="genres">
               <% for (var j = 0; j < topAnimeData.topGenre[i].length; j++){%>
