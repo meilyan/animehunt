@@ -163,6 +163,11 @@ app.get("/anime/:id/:title", async (req,res) => {
     })
 })
 
+app.get("/login", (req, res) => {
+
+    res.render("login.ejs")
+})
+
 app.listen(port, ()=>{
     console.log("App using port " + port)
 })

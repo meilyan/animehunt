@@ -492,7 +492,7 @@ li.link:hover {
     /*box-shadow: 0 14px 30px rgba(103,132,187,.15),0 4px 4px rgba(103,132,187,.05);*/
 }
 
-.alternate li a {
+.alternate li  {
     display: block;
 }
 
@@ -569,6 +569,10 @@ li.link:hover {
 
 .relation {
     width: 100%;
+}
+
+.top-for-top {
+    margin-top: 100px;
 }
 
 @media screen and (max-width: 600px){
