@@ -574,3 +574,143 @@ li.link:hover {
 .top-for-top {
     margin-top: 100px;
 }
+
+.wrap-streaming {
+    display: grid;
+    max-height: 200px;
+    max-width: 900px;
+    overflow: scroll;
+    overflow-y: hidden;
+    gap: 10px;
+}
+
+.media-streaming {
+    display: grid;
+    grid-template-rows: 120px 30px;
+    grid-gap: 10px;
+    width: 180px;
+    overflow: hidden;
+}
+
+.media-streaming img {
+    width: 100%;
+    height: 120px;
+    border-radius: 10px;
+}
+
+.media-info a {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 600px){
+    
+    .navnav {
+        width: 100%;
+    }
+    .nav-logo {
+        width: 100%;
+        margin-left: 10px;
+    }
+    .nav-link {
+        display: none;
+    }
+
+    .row {
+        margin: 10px;
+        width: 100%;
+    }
+
+    .top {
+        display: none;
+    }
+
+    .footer {
+        width: 100%;
+    }
+
+    .header-data {
+        margin: 10px;
+        display: block;
+    }
+
+    .cover-wrap {
+        display: none;
+    }
+
+    .nav-content {
+        display: none;
+    }
+
+    .main-content {
+        display: block;
+    }
+
+    .titles {
+        display: none;
+    }
+
+    .information {
+        display: none;
+    }
+    .grid-wrap {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .navnav {
+        width: 100%;
+    }
+    .nav-logo {
+        width: 100%;
+        margin: 10px;
+    }
+    .row {
+        width: 100%;
+    }
+    .footer {
+        width: 100%;
+    }
+    .top {
+        display: none;
+    }
+
+    .login {
+        display: none;
+    }
+
+    .nav-link {
+        width: 100%;
+    }
+
+    ul.nav-link {
+        width: 0%;
+    }
+    
+    .register {
+        display: none;
+    }
+
+    .row {
+        margin: 10px;
+        width: 95%;
+    }
+
+    .title-link {
+        width: 95%;
+    }
+
+    .header-data {
+        margin: 1rem;
+    }
+
+    .nav-content {
+        gap: 25px;
+    }
+
+    .grid-wrap {
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: none;
+    }
+}
