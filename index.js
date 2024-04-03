@@ -19,9 +19,9 @@ app.use(express.static("public"));
 app.use(express.urlencoded({extended: true}));
 
 app.get ("/", async (req, res) => {
-    const animeTopResult = await axios.get(API_URL + "/top/anime?type=tv&filter=bypopularity");
-    const animeTopAiringResult = await axios.get(API_URL + "/top/anime?type=tv&limit=6&filter=airing");
-    const animeTopUpCommingResult = await axios.get(API_URL + "/top/anime?type=tv&limit=6&filter=upcoming");
+    const animeTopResult = await limiter.schedule(() => axios.get(API_URL + "/top/anime?type=tv&filter=bypopularity"));
+    const animeTopAiringResult = await limiter.schedule(() => axios.get(API_URL + "/top/anime?type=tv&limit=6&filter=airing"));
+    const animeTopUpcomingResult = await limiter.schedule(() => axios.get(API_URL + "/top/anime?type=tv&limit=6&filter=upcoming"));
     
     const topAnimeData = {
         topMalId : [],
