@@ -12,7 +12,7 @@ const apiClient = axios.create({
 
 const limiter = new Bottleneck({
     maxConcurrent: 1,
-    minTime: 500,
+    minTime: 1000,
 })
 
 app.use(express.static("public"));
